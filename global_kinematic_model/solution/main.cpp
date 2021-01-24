@@ -12,6 +12,7 @@ constexpr double pi() { return M_PI; }
 double deg2rad(double x) { return x * pi() / 180; }
 double rad2deg(double x) { return x * 180 / pi(); }
 
+/* Distance between the front of the vehicle and its center of gravity */
 const double Lf = 2;
 
 // Return the next state.
@@ -21,7 +22,7 @@ VectorXd globalKinematic(const VectorXd &state,
 int main() {
   // [x, y, psi, v]
   VectorXd state(4);
-  // [delta, v]
+  // [delta, a]
   VectorXd actuators(2);
 
   state << 0, 0, deg2rad(45), 1;
